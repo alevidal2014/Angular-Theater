@@ -1,0 +1,73 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    background-color:beige;     
+}
+
+*{
+    margin: 0 auto;
+}
+
+#nav_container, nav{
+    margin-left: 0;
+}
+
+#header, #container{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 95%;
+    max-width: 1600px !important;
+}
+
+h1{
+    color: #95999b; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 32px; 
+    font-weight: 100; 
+    line-height: 50px; 
+    letter-spacing: 1px;        
+}
+
+
+/*Respponsive design*/
+@media (max-width: 600px){
+    #nav_container{
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    nav{
+        width: 100% !important;
+    }
+
+    div.mat-tab-links{
+        width: 100% !important;
+        flex-flow: row;
+        -ms-flex-align: stretch;   
+    }
+    a.mat-tab-link{
+        flex: auto;
+        width: 32%;
+        -ms-flex-align: stretch;
+    }    
+}
+
+@media (max-width: 300px){
+    div.mat-tab-links{
+         flex-flow: column;
+         
+    }
+    a.mat-tab-link{
+        flex: auto;
+        width: 98%;
+        -ms-flex-align: stretch;
+        padding: 5px;
+        height: 40px;;
+    }  
+
+    h1{
+    font-size: 22px; 
+    font-weight: 50; 
+    line-height: 25px; 
+    letter-spacing: 0.5px;  
+    }
+}

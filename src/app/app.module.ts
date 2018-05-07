@@ -19,7 +19,7 @@ import { TopRatedComponent } from './top-rated/top-rated.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MoviesViewComponent } from './movies-view/movies-view.component';
-
+//this a test
 
 
 @NgModule({

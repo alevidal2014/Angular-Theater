@@ -21,6 +21,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { MoviesViewComponent } from './movies-view/movies-view.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

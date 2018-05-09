@@ -1,0 +1,23 @@
+#view_selector_container button{
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+  }
+  
+  #b_grid{
+    padding: 0px;
+    background-image: url('../../assets/images/grid_view.png');  
+    background-repeat:no-repeat;
+    background-size: 26px 26px;
+  }
+  
+  #b_list{
+    padding: 0px;
+    background-image: url('../../assets/images/list_view.png');  
+    background-repeat:no-repeat;
+    background-size: 26px 26px;
+  }
+  
+  .b_selected{
+    border: rgba(9, 79, 114, 0.782) solid 2px;
+  }

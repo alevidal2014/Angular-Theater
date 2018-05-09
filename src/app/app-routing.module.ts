@@ -6,7 +6,7 @@ import { PopularComponent } from './popular/popular.component';
 import { TopRatedComponent } from './top-rated/top-rated.component';
 
 const routes: Routes = [ 
-  { path: '', redirectTo: '/movies', pathMatch: 'full' },
+  { path: '', redirectTo: 'movies', pathMatch: 'full' },
   { path: 'detail/:id', component: MovieDetailComponent },
   { path: 'detail/:id/:query', component: MovieDetailComponent },  
   { path: 'popular', component: PopularComponent } ,

@@ -33,12 +33,19 @@ export class MovieService {
 
   private result: Observable<any[]>;
   private movies: any = {};
-
+  private selected_view: String = 'grid';
   
   constructor(private http: Http) {
     
    }
 
+   getView(): String{
+     return this.selected_view;
+   }
+
+   setView(view: String){
+     this.selected_view = view;
+   }
   
   //This fucntion retreives the information of the last release movies 
   getMovies(): Observable<Movie[]> {   
@@ -109,7 +116,7 @@ export class MovieService {
                             item.release_date
                           );
                         })
-                        return result.slice(0,5);
+                        return result;
     });
   
   }

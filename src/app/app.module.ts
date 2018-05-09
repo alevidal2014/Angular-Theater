@@ -12,13 +12,16 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieService } from './movie.service';
 
 
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopularComponent } from './popular/popular.component';
 import { TopRatedComponent } from './top-rated/top-rated.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule} from '@angular/material/tooltip';
 import { MoviesViewComponent } from './movies-view/movies-view.component';
+import { ScrollEventModule } from 'ngx-scroll-event';
+import { ViewTypeComponent } from './view-type/view-type.component';
+import { ViewListComponent } from './view-list/view-list.component';
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { MoviesViewComponent } from './movies-view/movies-view.component';
     PopularComponent,
     TopRatedComponent,
     MovieSearchComponent,
-    MoviesViewComponent
+    MoviesViewComponent,
+    ViewTypeComponent,
+    ViewListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { MoviesViewComponent } from './movies-view/movies-view.component';
     BrowserAnimationsModule,
     MatTabsModule,
     FlexLayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ScrollEventModule
   ],
   providers: [MovieService],  //Add the new service to the list of providers 
   bootstrap: [AppComponent]

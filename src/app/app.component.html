@@ -1,17 +1,26 @@
-<div id='header' fxLayout='column' >
-    <div  > 
+
+<div  id='header' fxLayout='column' detect-scroll (onScroll)="handleScroll($event)" [bottomOffset]="200" [topOffset]="60">
+    <div > 
         <h1>
             {{title}}
         </h1>
     </div>
 
-    <div  fxLayout="row" id='nav_container'>
-        <nav mat-tab-nav-bar fxLayoutAlign="space-around center">
-            <a  mat-tab-link label='movies' index='0' routerLinkActive rla="routerLinkActive"   routerLink="/movies">All Movies</a>
-            <a  mat-tab-link label='popular' index='1' routerLinkActive rla="routerLinkActive"  routerLink="/popular">Popular</a>
-            <a  mat-tab-link label='top_rated' index='2' routerLinkActive  rla="routerLinkActive"  routerLink="/top_rated">Top Rated</a>
-               
-    </nav>
+    <div   id='nav_container'>        
+        <nav mat-tab-nav-bar [ngClass]="{fixed: isScrolled}">
+            <a mat-tab-link
+               *ngFor="let link of tabLinks"
+               [routerLink]="link.link"
+               routerLinkActive #rla="routerLinkActive"
+               [active]="rla.isActive">
+               {{link.label}}
+            </a>
+          </nav>
+        
+          <!--This nav is just to keep the rest of the content fixed when we fixed the nav in the page-->
+          <nav mat-tab-nav-bar *ngIf="isScrolled">
+            <a mat-tab-link> </a>
+          </nav>
     </div>
 
 </div>
@@ -19,6 +28,7 @@
 <div id='container'>
     <router-outlet></router-outlet>
 </div>
+
 
 
 

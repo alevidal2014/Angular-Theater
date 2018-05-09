@@ -3,9 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject }    from 'rxjs/Subject';
 import { of }         from 'rxjs/observable/of';
 
-import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
@@ -18,9 +16,9 @@ import { MovieService } from '../movie.service';
 export class MovieSearchComponent implements OnInit {
 
   movies$: Observable<Movie[]>;
-   private searchTerms = new Subject<string>();
+  private searchTerms = new Subject<string>();
 
-  @Output() textChanged = new EventEmitter<string>()
+  @Output() textChanged = new EventEmitter<string>() 
 
   constructor(private movieService: MovieService) { }
 
@@ -28,7 +26,6 @@ export class MovieSearchComponent implements OnInit {
   search(term: string): void {
     
     this.searchTerms.next(term);
-    //console.log(this.movies$);
   }
   
  ngOnInit(): void {
@@ -41,7 +38,7 @@ export class MovieSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes      
-      // switchMap((term: string) => this.movieService.searchMovies(term))            
+                
     ).subscribe( (text : string) =>{
       this.textChanged.emit(text);
     }

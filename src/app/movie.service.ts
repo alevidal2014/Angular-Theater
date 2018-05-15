@@ -31,6 +31,10 @@ export class MovieService {
 
   private serchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=6dd89994250985b567dcb668c71843c5&query=';
 
+  private castURL = '/credits?api_key=6dd89994250985b567dcb668c71843c5';
+
+  private similarURL = '/similar?api_key=6dd89994250985b567dcb668c71843c5';
+
   private result: Observable<any[]>;
   private movies: any = {};
   private selected_view: String = 'grid';
@@ -121,5 +125,15 @@ export class MovieService {
   
   }
 
-  
+  getCast(id: number): Observable<any> {
+    
+    return this.http.get(this.oneMovieUrl1 +id +this.castURL).map((res: Response) =>res.json());       
+  }
+
+  //This fucntion retreives the ralated movies 
+  getRelated(id: number): Observable<any[]> {  
+    //console.log(this.oneMovieUrl1 +id +this.similarURL);  
+    return this.http.get(this.oneMovieUrl1 +id +this.similarURL).map((res: Response) =>res.json()); 
+  } 
+ 
 }

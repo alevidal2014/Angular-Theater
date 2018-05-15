@@ -22,6 +22,9 @@ import { MoviesViewComponent } from './movies-view/movies-view.component';
 import { ScrollEventModule } from 'ngx-scroll-event';
 import { ViewTypeComponent } from './view-type/view-type.component';
 import { ViewListComponent } from './view-list/view-list.component';
+import { ShowMovieComponent } from './show-movie/show-movie.component';
+import { ShowRelatedComponent } from './show-related/show-related.component';
+import { } from "angular-ui-carousel";
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { ViewListComponent } from './view-list/view-list.component';
     MovieSearchComponent,
     MoviesViewComponent,
     ViewTypeComponent,
-    ViewListComponent
+    ViewListComponent,
+    ShowMovieComponent,
+    ShowRelatedComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,7 @@ import { ViewListComponent } from './view-list/view-list.component';
     MatTabsModule,
     FlexLayoutModule,
     MatTooltipModule,
-    ScrollEventModule
+    ScrollEventModule,    
   ],
   providers: [MovieService],  //Add the new service to the list of providers 
   bootstrap: [AppComponent]

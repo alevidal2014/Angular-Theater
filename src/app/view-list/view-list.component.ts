@@ -20,6 +20,12 @@ export class ViewListComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
+    
   }
 
+  show():void{
+    console.log(this.mo);
+    
+  }
+   
 } 

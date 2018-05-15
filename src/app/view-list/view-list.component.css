@@ -47,7 +47,8 @@
     padding: 15px;    
   }
   #popular{
-    max-width: 400px;
+    width: 50%;
+    padding-right: 20px;
   }
   
   #popular_number{

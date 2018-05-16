@@ -25,6 +25,8 @@ import { ViewListComponent } from './view-list/view-list.component';
 import { ShowMovieComponent } from './show-movie/show-movie.component';
 import { ShowRelatedComponent } from './show-related/show-related.component';
 import { } from "angular-ui-carousel";
+import { AuthorDetailComponent } from './author-detail/author-detail.component';
+import { ShowAuthorComponent } from './show-author/show-author.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { } from "angular-ui-carousel";
     ViewTypeComponent,
     ViewListComponent,
     ShowMovieComponent,
-    ShowRelatedComponent
+    ShowRelatedComponent,
+    AuthorDetailComponent,
+    ShowAuthorComponent
   ],
   imports: [
     BrowserModule,

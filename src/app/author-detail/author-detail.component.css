@@ -1,0 +1,16 @@
+div{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    
+}
+
+h2{
+    margin-bottom: 0px;
+    color: #95999b; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 26px; 
+    font-weight: 100; 
+    line-height: 50px; 
+    letter-spacing: 1px;
+}

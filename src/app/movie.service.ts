@@ -35,6 +35,10 @@ export class MovieService {
 
   private similarURL = '/similar?api_key=6dd89994250985b567dcb668c71843c5';
 
+  private authorURL1 = 'https://api.themoviedb.org/3/person/';
+
+  private authorMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=6dd89994250985b567dcb668c71843c5&with_cast=`;
+
   private result: Observable<any[]>;
   private movies: any = {};
   private selected_view: String = 'grid';
@@ -134,6 +138,16 @@ export class MovieService {
   getRelated(id: number): Observable<any[]> {  
     //console.log(this.oneMovieUrl1 +id +this.similarURL);  
     return this.http.get(this.oneMovieUrl1 +id +this.similarURL).map((res: Response) =>res.json()); 
+  } 
+
+  getAuthor(id: number): Observable<any> {
+    //console.log(this.authorURL1 +id +this.oneMovieUrl2);
+    return this.http.get(this.authorURL1 +id +this.oneMovieUrl2).map((res: Response) =>res.json());
+  }
+
+  getmoviesByCast(id: number): Observable<any[]> {  
+    //console.log(this.authorMoviesURL +id);  
+    return this.http.get(this.authorMoviesURL +id).map((res: Response) =>res.json()); 
   } 
  
 }

@@ -3,24 +3,22 @@ import {Movie} from '../movie';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-show-movie',
-  templateUrl: './show-movie.component.html',
-  styleUrls: ['./show-movie.component.css']
+  selector: 'app-show-author',
+  templateUrl: './show-author.component.html',
+  styleUrls: ['./show-author.component.css']
 })
-export class ShowMovieComponent implements OnInit {
+export class ShowAuthorComponent implements OnInit {
+
+  @Input()myAuthor;
 
   constructor(private location: Location) { }
 
   ngOnInit() {
   }
 
-  @Input() myMovie: Movie;
-  @Input() myCast: string[];
-  
   //Back button 
   goBack(): void {
     this.location.back();
   }
 
-  
 }

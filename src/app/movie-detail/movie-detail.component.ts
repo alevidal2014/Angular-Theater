@@ -1,5 +1,5 @@
 //This component will be type input since it will receive the selected movie to display
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs/Observable";
 
 import { ActivatedRoute } from '@angular/router';
@@ -18,10 +18,10 @@ import { MovieService }  from '../movie.service';
 export class MovieDetailComponent implements OnInit {
 
   //This property is espected to be received by the parent component 
-   movie: any;
+  movie: any;
   cast: any;
   genreList: String[];
-  @Input() movie_id: number;
+  movie_id: number;
   //related_movies: Movie[]; 
   related_movies$: Observable<Movie[]>
   

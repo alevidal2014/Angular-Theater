@@ -13,10 +13,10 @@
     margin-right: 5px;
     color: #607D8B;
     background-color: #DDD;
-    left: .1em;
-    max-width: 200px;
-    min-width: 160px;
-    
+    max-height: 100px;
+    display: flex;
+    /*max-width: 200px;
+    min-width: 160px;*/
   }
   
   
@@ -29,7 +29,13 @@
     text-decoration: none;   
     color:  #5e6264;  
     text-shadow: 1px 1px 1px #000000;
-     
+    font-size: 20px;    
+    display: flex;
+    width:50%;
+  }
+
+  a img{
+    width: 178px;
   }
   
   #movies_container a:visited{
@@ -37,28 +43,22 @@
   
   }
   #movie_name{
-    height: 40px;
-    overflow: hidden;
+    align-content: center center;
+    padding: 15px;    
   }
   #popular{
-    height: 20px;
+    width: 50%;
+    padding-right: 20px;
   }
   
   #popular_number{
     margin-left: 10px;
   }
-
-  a img{max-height: 350px;}
+  
     
   /*REsponsive for small devices*/
   
-  @media (max-width: 1500px){
-    a img{max-height: 290px;}
-  }
-
-  @media (max-width: 1200px){
-    a img{max-height: 240px;}
-  }
+  
   
   @media (max-width: 400px){
     ul{
@@ -74,7 +74,7 @@
   
     a img{
       max-width: 400px !important;
-      width: 100%;      
+      width: 100%;
     }
   
     #movies_container{

@@ -9,6 +9,7 @@
       font-weight: 100; 
       line-height: 50px; 
       letter-spacing: 1px;
+      margin: 15px 0 0 0;      
     }
   #movies_container ul{
     padding: 0px;

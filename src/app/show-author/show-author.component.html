@@ -1,0 +1,19 @@
+<div *ngIf="myAuthor" fxFlex='90%' fxLayout="row wrap" fxLayoutAlign="center start" id='detail_container'>
+ 
+  <div id='image_cover' fxFlex='30%'>
+    <img src="https://image.tmdb.org/t/p/w500/{{myAuthor.profile_path}}" fxFlex='100%'> 
+  </div>
+  <div id='details' fxLayout="column"  fxFlex >
+      <h2 fxLayoutAlign="center start">{{ myAuthor.name | uppercase }}</h2>
+      <p>{{myAuthor.biography}}</p>     
+      <div fxLayoutAlign="start center" id='popular'>
+              <img fxFlex='100%'  fxLayoutAlign="start center" src='../../assets/images/popular.png'>
+              <div id='popular_number'>{{myAuthor.popularity}}</div>
+              
+      </div> 
+
+      <div id='birth' fxLayoutAlign="start center" >Date of Birth: &nbsp; <span>{{myAuthor.birthday}}</span></div>
+     
+      <div><button (click)="goBack()">back</button></div>
+  </div>    
+</div> 

@@ -1,0 +1,29 @@
+<div *ngIf="myMovie" fxFlex='90%' fxLayout="row wrap" fxLayoutAlign="center start" id='detail_container'>
+ 
+  <div id='image_cover' fxFlex='30%'>
+    <img src="https://image.tmdb.org/t/p/w500/{{myMovie.poster_path}}" fxFlex='100%'
+          srcset="https://image.tmdb.org/t/p/w500/{{myMovie.poster_path}} 1200w, https://image.tmdb.org/t/p/w500/{{myMovie.backdrop_path}} 800w" 
+          sizes='(max-width: 800px)'
+    > 
+  </div>
+  <div id='details' fxLayout="column"  fxFlex >
+      <h2 fxLayoutAlign="center start">{{ myMovie.title | uppercase }}</h2>
+      <p>{{myMovie.overview}}</p>
+      <div id='genres' fxLayoutAlign="start center">Genre: &nbsp; <div *ngFor="let genre of myMovie.genres">{{genre.name}}, &nbsp; </div> </div>
+      <div id='cast'>Cast: &nbsp;</div>
+      <div id='cast_list'> <div class='one' *ngFor="let author of myCast | slice:0:10"><a routerLink="/author/{{author.id}}">{{author.name}} </a>&nbsp; </div>  </div>
+      <div fxLayoutAlign="start center" id='popular'>
+              <img fxFlex='100%'  fxLayoutAlign="start center" src='../../assets/images/popular.png'>
+              <div id='popular_number'>{{myMovie.vote_average}}</div>
+              
+      </div> 
+
+      <div id='release' fxLayoutAlign="start center" (click)='show()'>Release Date: &nbsp; <span>{{myMovie.release_date}}</span></div>
+      <div id='companies'>
+                   <div *ngFor="let companie of myMovie.production_companies" class='companie'>
+                      <img *ngIf="companie.logo_path" src="https://image.tmdb.org/t/p/w500/{{companie.logo_path}}" alt='{{companie.name}}' class="example-tooltip-host" matTooltip="{{companie.name}}" matTooltipPosition="below">                                                            
+                   </div> 
+      </div>
+      <div><button (click)="goBack()">back</button></div>
+  </div>    
+</div> 

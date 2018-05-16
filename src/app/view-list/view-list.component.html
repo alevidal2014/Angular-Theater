@@ -1,0 +1,21 @@
+<div fxFlex='95%' id='movies_container'>
+  <ul fxLayout="column">
+     <li *ngFor="let movie of mo" class='movie_element'>
+        
+            <a routerLink="/detail/{{movie.id}}" fxLayoutAlign="start center">
+              <img  src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}">                               
+              <div id='movie_name'>{{movie.title}}</div> 
+            </a>
+            <div fxLayout="row" fxLayoutAlign="space-between center" id='popular'>
+              <div fxLayout="row"  fxFlex=30% fxLayoutAlign="start center">
+                <img fxFlex='20%'  src='../../assets/images/popular.png'>               
+                <div id='popular_number'>{{movie.vote_average}}</div>
+              </div>
+              <div> <span>Release Date:</span>{{movie.release_date}}</div>
+              <div> <span>Times Rated:</span>{{movie.vote_count}}</div>
+            </div>        
+    </li>
+  </ul>
+</div>  
+
+

@@ -1,5 +1,5 @@
 <div *ngIf="related" fxFlex='90%' id='related'>
-  <ul fxLayout="row wrap" fxLayoutAlign="space-around">
+  <ul fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap >
       <li *ngFor="let movie of related.results | slice:0:9" fxFlex="10%" fxLayoutGap class='movie_element'>
          
              <a routerLink="/detail/{{movie.id}}">

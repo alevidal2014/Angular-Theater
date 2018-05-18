@@ -7,9 +7,6 @@
     margin-top: 10px;
 }
 
-ul{
-    
-}
 ul li{
     list-style: none;
     color: #607D8B;
@@ -44,3 +41,17 @@ li:hover{
   div img{
       margin-right: 5px;
   }
+
+  @media (max-width: 1600px){
+     li{
+         width: 15% !important;
+         max-width: 15% !important;
+         min-width: 150px ;
+     }
+
+     ul{
+         flex-flow: wrap;
+     }
+  } 
+
+  

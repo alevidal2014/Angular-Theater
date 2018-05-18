@@ -24,9 +24,9 @@ import { ViewTypeComponent } from './view-type/view-type.component';
 import { ViewListComponent } from './view-list/view-list.component';
 import { ShowMovieComponent } from './show-movie/show-movie.component';
 import { ShowRelatedComponent } from './show-related/show-related.component';
-import { } from "angular-ui-carousel";
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { ShowAuthorComponent } from './show-author/show-author.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { ShowAuthorComponent } from './show-author/show-author.component';
     ShowMovieComponent,
     ShowRelatedComponent,
     AuthorDetailComponent,
-    ShowAuthorComponent
+    ShowAuthorComponent    
   ],
   imports: [
     BrowserModule,
@@ -56,7 +56,8 @@ import { ShowAuthorComponent } from './show-author/show-author.component';
     MatTabsModule,
     FlexLayoutModule,
     MatTooltipModule,
-    ScrollEventModule,    
+    ScrollEventModule, 
+    ReactiveFormsModule   
   ],
   providers: [MovieService],  //Add the new service to the list of providers 
   bootstrap: [AppComponent]

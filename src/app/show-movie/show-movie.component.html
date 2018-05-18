@@ -18,7 +18,7 @@
               
       </div> 
 
-      <div id='release' fxLayoutAlign="start center" (click)='show()'>Release Date: &nbsp; <span>{{myMovie.release_date}}</span></div>
+      <div id='release' fxLayoutAlign="start center">Release Date: &nbsp; <span>{{myMovie.release_date}}</span></div>
       <div id='companies'>
                    <div *ngFor="let companie of myMovie.production_companies" class='companie'>
                       <img *ngIf="companie.logo_path" src="https://image.tmdb.org/t/p/w500/{{companie.logo_path}}" alt='{{companie.name}}' class="example-tooltip-host" matTooltip="{{companie.name}}" matTooltipPosition="below">                                                            

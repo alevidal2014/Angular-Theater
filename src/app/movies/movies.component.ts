@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
 import { Observable } from "rxjs/Observable";
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -13,14 +14,29 @@ export class MoviesComponent implements OnInit {
 //List of movies 
  movies$: Observable<Movie[]> ;
  view_used: String= 'grid'; 
+
+ //Query param
+ searchTerm: string; 
    
  //Movie Service injection 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService, private route: ActivatedRoute) { }
  
   ngOnInit() {
     //When initialized the component this function will call the service to get the data into movies property
-    this.getMovies();
-    this.getView();
+        
+    this.route.queryParams
+                .subscribe((queryParam: Params)=>{
+                  this.searchTerm = queryParam['search_term'];
+                  if(this.searchTerm){
+                    this.onSearchChange(this.searchTerm);
+                    this.getView(); 
+                  }else{
+                    this.getMovies();
+                    this.getView(); 
+                  }
+                  
+                })   
+       
      }
 
      onSearchChange(term : string){

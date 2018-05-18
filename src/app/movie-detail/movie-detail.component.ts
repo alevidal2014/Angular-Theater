@@ -28,18 +28,17 @@ export class MovieDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieService,
-    private location: Location) { 
+    private location: Location) {      
       
-      route.params.subscribe(val => {
-        this.getMovie();
-        this.getCast();
-        this.getRelated();
-      });
   }
 
   ngOnInit() {   
-    
-  }
+    this.route.params.subscribe(val => {
+      this.getMovie();
+      this.getCast();
+      this.getRelated();
+    });
+  };  
   
   //Extract the movie id from the url parameters and request the service to get the movie info
   getMovie(): void {

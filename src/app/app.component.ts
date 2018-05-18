@@ -10,9 +10,10 @@ import { ScrollEvent } from 'ngx-scroll-event';
 })
 export class AppComponent {
  
+  
   title = 'My Theater';
   isScrolled = false;
-  
+    
   // Nav bar demo
     tabLinks: {label: string, link: string}[] = [
     {label: 'All Movies', link: '/movies'},

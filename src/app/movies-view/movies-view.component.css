@@ -48,7 +48,18 @@
     margin-left: 10px;
   }
 
-  a img{max-height: 350px;}
+  a img{
+    height: 100%;
+    max-height: 350px;}
+
+  li a{
+    height: 100%;
+  }
+  .default{
+    height: 100%;
+    max-width: 100%;
+  }
+  
     
   /*REsponsive for small devices*/
   

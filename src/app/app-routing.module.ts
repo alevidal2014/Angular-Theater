@@ -9,8 +9,7 @@ import {AuthorDetailComponent} from './author-detail/author-detail.component'
 const routes: Routes = [ 
   { path: '', redirectTo: 'movies', pathMatch: 'full' },
   { path: 'detail/:id', component: MovieDetailComponent },
-  { path: 'detail/:id/:query', component: MovieDetailComponent },  
-  { path: 'popular', component: PopularComponent } ,
+   { path: 'popular', component: PopularComponent } ,
   { path: 'top_rated', component: TopRatedComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'author/:id', component: AuthorDetailComponent },  

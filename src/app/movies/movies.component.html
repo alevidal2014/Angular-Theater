@@ -1,6 +1,7 @@
 <!-- Template of the main list of movies -->
 
-<app-movie-search (textChanged)="onSearchChange($event)"></app-movie-search>
+<!-- <app-movie-search (textChanged)="onSearchChange($event)"></app-movie-search> -->
+<app-movie-search ></app-movie-search>
 <app-view-type (selection)="onVieChange($event)" ></app-view-type> 
 <app-movies-view *ngIf="view_used==='grid'" [mo]="movies$ | async"></app-movies-view> 
 <app-view-list *ngIf="view_used==='list'" [mo]="movies$ | async"></app-view-list> 

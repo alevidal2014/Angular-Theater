@@ -31,11 +31,12 @@
     text-shadow: 1px 1px 1px #000000;
     font-size: 20px;    
     display: flex;
-    width:50%;
+    /* width:50%; */
   }
 
   a img{
-    width: 178px;
+     width: 178px;            
+    
   }
   
   #movies_container a:visited{
@@ -54,42 +55,86 @@
   #popular_number{
     margin-left: 10px;
   }
-  
+
+  #img_cont{
+    max-height: 100%;
+    width: 50%;
+  }
+  li div a{
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .default{
+    max-height: 100%;
+    max-width: 100%;
+    width: 178px;
+    height: 100px;
+  }
     
   /*REsponsive for small devices*/
-  
-  
-  
-  @media (max-width: 400px){
-    ul{
-      flex-flow: column !important; 
-      width:95% ;     
-      max-width: 400px !important;
-    }  
-  
-    li{
-      width:95% ; 
-      max-width: 400px !important;  
+  @media (max-width: 1000px){
+    #release{
+      max-width: 100px;
     } 
-  
-    a img{
-      max-width: 400px !important;
+
+    #movie_name{
+      align-content: center center;
+      padding: 5px;  
+      font-size: 15px;  
+      max-width: 40%;
+    }
+   
+  }
+
+  @media (max-width: 700px){
+
+    #popular{
+      flex-direction: column !important; 
+      padding: 3px;
+      width: 30%;
+    }
+    #img_cont{
+       width: 70%;
+    }
+    
+    #pop_cont, #release, #rated{
+      max-width:100% !important; 
+      padding: 2px;
+    }
+
+    #pop_cont{
+      max-height: 40px;
+    }
+
+    #release, #rated{
       width: 100%;
     }
-  
-    #movies_container{
-      max-width: 400px !important;       
-  }
-  .movie_element{
-    max-width: 400px !important;
-    width: 100%;
-  }
-  #movie_name{
-    font-size: 12px;  
-  }
+
+    #pop_cont img{
+      max-width: 10% !important;
+    }
   }
   
-  @media (max-width: 200px){
+  
+  @media (max-width: 500px){    
+
+  #popular{
+    font-size: 12px;
+  }
+
+  a img{
+    width: 100px;
+  }
+   li{
+    height: 60px;
+    overflow: hidden;    
+  }
+  .default{
+    height: 60px;
+  }
+  }
+  
+  @media (max-width: 300px){
       
     #movies_container{
         min-width: 100px !important;       
@@ -111,4 +156,8 @@
          width:120px;
          min-width: 100px !important; 
      }
+
+     #movie_name{        
+      font-size: 12px;       
+    }
   }

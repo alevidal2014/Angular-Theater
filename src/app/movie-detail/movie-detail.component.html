@@ -1,30 +1,4 @@
 <!-- Template to show a movie detali-->
-<div *ngIf="movie" fxFlex='90%' fxLayout="row wrap" fxLayoutAlign="center start" id='detail_container'>
- 
-    <div id='image_cover' fxFlex='30%'>
-      <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" fxFlex='100%'
-            srcset="https://image.tmdb.org/t/p/w500/{{movie.poster_path}} 1200w, https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}} 800w" 
-            sizes='(max-width: 800px)'
-      > 
-    </div>
-    <div id='details' fxLayout="column"  fxFlex >
-        <h2 fxLayoutAlign="center start">{{ movie.title | uppercase }}</h2>
-        <p>{{movie.overview}}</p>
-        <div id='genres' fxLayoutAlign="start center">Genre: &nbsp; <div *ngFor="let genre of movie.genres">{{genre.name}}, &nbsp; </div> </div>
-        <div fxLayoutAlign="start center" id='popular'>
-                <img fxFlex='100%'  fxLayoutAlign="start center" src='../../assets/images/popular.png'>
-                <div id='popular_number'>{{movie.vote_average}}</div>
-                
-        </div> 
-
-        <div id='release' fxLayoutAlign="start center">Release Date: &nbsp; <span>{{movie.release_date}}</span></div>
-        <div id='companies'>
-                     <div *ngFor="let companie of movie.production_companies" class='companie'>
-                        <img *ngIf="companie.logo_path" src="https://image.tmdb.org/t/p/w500/{{companie.logo_path}}" alt='{{companie.name}}' class="example-tooltip-host" matTooltip="{{companie.name}}" matTooltipPosition="below">                                                            
-                     </div> 
-        </div>
-        <div><button (click)="goBack()">back</button></div>
-    </div>    
-    
-</div>  
- 
+<app-show-movie [myMovie] ="movie" [myCast]="cast"></app-show-movie>
+<div fxLayoutAlign="center center"><h2>Related Movies</h2></div>
+<app-show-related [related] = "related_movies$ | async"> </app-show-related>

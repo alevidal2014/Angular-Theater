@@ -1,0 +1,57 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+
+#related{
+    margin-top: 10px;
+}
+
+ul li{
+    list-style: none;
+    color: #607D8B;
+    background-color: #DDD;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+li:hover{
+    border: solid rgba(10, 10, 10, 0.522);
+    border-radius: 0 0 5px 10px;
+ }
+
+ a{
+    text-decoration: none;   
+    color:  #5e6264;  
+    text-shadow: 0.5px 0.5px 0.5px #000000;
+  }
+
+  #movie_name{
+    height: 40px;
+    overflow: hidden;
+  }
+  #popular{
+    height: 20px;
+  }
+
+  #vote{
+    margin-left: 0px;
+  }
+
+  div img{
+      margin-right: 5px;
+  }
+
+  @media (max-width: 1600px){
+     li{
+         width: 15% !important;
+         max-width: 15% !important;
+         min-width: 150px ;
+     }
+
+     ul{
+         flex-flow: wrap;
+     }
+  } 
+
+  

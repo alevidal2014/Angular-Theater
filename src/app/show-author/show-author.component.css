@@ -1,0 +1,130 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    color: cornsilk;
+}
+
+#detail_container{
+    background-color: #141414; 
+    margin: 0 auto;    
+    margin-top: 20px; 
+}
+
+#image_cover{
+    height: 100%;
+    max-height: 500px;    
+}
+
+#details{
+    padding: 10px 20px 10px 20px;    
+}
+
+img{
+    max-height: 500px;   
+}
+
+h2{
+    margin-bottom: 20px;
+    color: rgb(192, 73, 73);
+}
+
+
+#popular{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin:0;
+    margin-top: 10px;
+  }
+  
+  #popular img{
+    height: 100%;
+    width: 100%x;
+    padding: 0;
+    margin:0;
+  }
+
+  #popular_number{
+    margin-left: 10px;
+  }
+
+#birth{
+    margin-top: 10px;
+    margin-bottom: 5px;    
+    margin-left: 0;
+    color: rgb(192, 73, 73);
+    font-weight: bold;
+}
+ 
+
+ button{
+     width:100px;
+     height: 30px;  
+     margin-top:20px; 
+
+        background: #e8ebed;
+        background-image: -webkit-linear-gradient(top, #e8ebed, #e8ebed);
+        background-image: -moz-linear-gradient(top, #e8ebed, #e8ebed);
+        background-image: -ms-linear-gradient(top, #e8ebed, #e8ebed);
+        background-image: -o-linear-gradient(top, #e8ebed, #e8ebed);
+        background-image: linear-gradient(to bottom, #e8ebed, #e8ebed);
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+        border-radius: 10px;
+        text-shadow: 1px 1px 2px #666666;
+        font-family: Courier New;
+        color: rgb(192, 73, 73);;
+        font-size: 19px;
+        padding: 5px 10px 5px 10px;
+        border: solid #bf4949 2px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+      
+      
+ 
+
+ /*REsponsive design*/
+ @media (max-width: 1000px){
+    p{
+        max-height: 400px;
+        overflow: auto;
+    }
+
+ }
+ @media (max-width: 700px){
+    #image_cover{
+        min-width: 100%;
+    }
+
+    #details{
+        width: 100% !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+    #image_cover img{
+        width: 100% !important;
+    }
+
+    button{
+        display: block;
+    }
+
+   
+    button{
+     width:60px;
+     height: 20px;  
+     margin-top:5px;
+     font-size: 12px;
+     padding-top: 2px;
+    }
+
+    @media (max-width: 400px){
+        #popular img{
+            width:20px;
+            height: 20px;;
+        }
+
+    }
+ }

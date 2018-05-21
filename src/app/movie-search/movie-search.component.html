@@ -2,19 +2,9 @@
   <div fxLayoutAlign="end center" fxFlex='40%' style="padding-right: 5px;" id='search_text_box'><h4>Search</h4></div>
   <div fxFlex='60%' style="padding-left: 5px;" id='search_input_container'>
     <span class="icon"><i class="fa fa-search"></i></span>
-    <input #searchBox fxFlex='40%' id="search-box" (keyup)="search(searchBox.value)" placeholder="Search..." /> 
+    <input type="search" [formControl]="searchField" fxFlex='40%' id="search-box" placeholder="Search..." />
+    
   </div>
 </div>
+ 
 
-<!-- <div fxLayout="row">
-  <div fxLayoutAlign="end center" fxFlex='40%' id='invisible'></div>
-  <div fxFlex='60%' style="padding-left: 5px;">  
-  <ul fxLayout="column" fxFlex='40%' fxLayoutAlign="start start" class="search-result">
-      <li  *ngFor="let movie of movies$ | async " >
-        <a routerLink="/detail/{{movie.id}}/{{searchBox.value}}"> 
-          {{movie.title}}
-        </a>
-      </li>
-    </ul>
-  </div>
-</div> -->

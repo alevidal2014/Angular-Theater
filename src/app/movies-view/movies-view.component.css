@@ -16,6 +16,7 @@
     left: .1em;
     max-width: 200px;
     min-width: 160px;
+    
   }
   
   
@@ -28,6 +29,7 @@
     text-decoration: none;   
     color:  #5e6264;  
     text-shadow: 1px 1px 1px #000000;
+     
   }
   
   #movies_container a:visited{
@@ -45,14 +47,29 @@
   #popular_number{
     margin-left: 10px;
   }
-  
-  #movie_name{
-   
+
+  a img{
+    height: 100%;
+    max-height: 350px;}
+
+  li a{
+    height: 100%;
+  }
+  .default{
+    height: 100%;
+    max-width: 100%;
   }
   
+    
   /*REsponsive for small devices*/
   
-  
+  @media (max-width: 1500px){
+    a img{max-height: 290px;}
+  }
+
+  @media (max-width: 1200px){
+    a img{max-height: 240px;}
+  }
   
   @media (max-width: 400px){
     ul{
@@ -68,7 +85,7 @@
   
     a img{
       max-width: 400px !important;
-      width: 100%;
+      width: 100%;      
     }
   
     #movies_container{

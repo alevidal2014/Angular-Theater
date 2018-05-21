@@ -4,18 +4,24 @@
     background-color:beige;     
 }
 
-*{
-    margin: 0 auto;
+#nav_container, nav{
+    margin-left: 0;  
+    transition-duration: 2s;
+    transition-property: all;   
 }
 
-#nav_container, nav{
-    margin-left: 0;
+.fixed{
+    position: fixed;
+    top: 0px;
+     background-color: #95999b72; 
+    transition-duration: 2s;
+    transition-property: all;    
 }
 
 #header, #container{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 95%;
-    max-width: 1600px !important;
+    max-width: 1600px !important;   
 }
 
 h1{

@@ -12,14 +12,25 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieService } from './movie.service';
 
 
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopularComponent } from './popular/popular.component';
 import { TopRatedComponent } from './top-rated/top-rated.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule} from '@angular/material/tooltip';
 import { MoviesViewComponent } from './movies-view/movies-view.component';
+<<<<<<< HEAD
 //this a test
+=======
+import { ScrollEventModule } from 'ngx-scroll-event';
+import { ViewTypeComponent } from './view-type/view-type.component';
+import { ViewListComponent } from './view-list/view-list.component';
+import { ShowMovieComponent } from './show-movie/show-movie.component';
+import { ShowRelatedComponent } from './show-related/show-related.component';
+import { AuthorDetailComponent } from './author-detail/author-detail.component';
+import { ShowAuthorComponent } from './show-author/show-author.component';
+import { ReactiveFormsModule} from '@angular/forms';
+>>>>>>> efe04f5c4af88c6a73587af7c1cd6afb7e8421fb
 
 
 @NgModule({
@@ -30,7 +41,13 @@ import { MoviesViewComponent } from './movies-view/movies-view.component';
     PopularComponent,
     TopRatedComponent,
     MovieSearchComponent,
-    MoviesViewComponent
+    MoviesViewComponent,
+    ViewTypeComponent,
+    ViewListComponent,
+    ShowMovieComponent,
+    ShowRelatedComponent,
+    AuthorDetailComponent,
+    ShowAuthorComponent    
   ],
   imports: [
     BrowserModule,
@@ -42,7 +59,9 @@ import { MoviesViewComponent } from './movies-view/movies-view.component';
     BrowserAnimationsModule,
     MatTabsModule,
     FlexLayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ScrollEventModule, 
+    ReactiveFormsModule   
   ],
   providers: [MovieService],  //Add the new service to the list of providers 
   bootstrap: [AppComponent]

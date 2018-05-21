@@ -1,13 +1,15 @@
-<div fxFlex='95%' fxLayoutAlign="space-evenly center" id='movies_container'>
+  <div fxFlex='95%' fxLayoutAlign="space-evenly center" id='movies_container'>
     <ul fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap>
-       <li *ngFor="let movie of mo" fxFlex="15%" fxLayoutGap class='movie_element'>
+       <li *ngFor="let movie of mo; let i=index" fxFlex="15%" fxLayoutGap class='movie_element'>
           
-              <a routerLink="/detail/{{movie.id}}">
-                <img fxFlex='100%' src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"              
+               <a routerLink="/detail/{{movie.id}}">
+                <img fxFlex='100%' *ngIf="movie.poster_path != null && movie.backdrop_path != null" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"              
                                    srcset="https://image.tmdb.org/t/p/w500/{{movie.poster_path}} 1000w, https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}} 400w" 
                                    sizes='(max-width: 500px)'                                                       
-                                       >            
-                <div id='movie_name' fxLayoutAlign="space-evenly center">{{movie.title}}</div> 
+                                       >        
+                 <img class='default' *ngIf="movie.poster_path === null || movie.backdrop_path=== null" src='../../assets/images/default.png'> 
+
+              <div id='movie_name' fxLayoutAlign="space-evenly center">{{movie.title}}</div> 
               </a>
               <div fxLayout="row" fxLayoutAlign="center center" id='popular'>
                 <img fxFlex='10%'  src='../../assets/images/popular.png'> 
@@ -16,5 +18,6 @@
       </li>
     </ul>
   </div> 
+
 
   

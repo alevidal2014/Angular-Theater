@@ -1,14 +1,14 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Subject }    from 'rxjs/Subject';
-import { of }         from 'rxjs/observable/of';
 
-import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import "rxjs/add/operator/debounceTime";
+import "rxjs/add/operator/distinctUntilChanged";
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-movie-search',
@@ -17,35 +17,18 @@ import { MovieService } from '../movie.service';
 })
 export class MovieSearchComponent implements OnInit {
 
-  movies$: Observable<Movie[]>;
-   private searchTerms = new Subject<string>();
+  searchField: FormControl; 
 
-  @Output() textChanged = new EventEmitter<string>()
-
-  constructor(private movieService: MovieService) { }
-
-  // Push a search term into the observable stream.
-  search(term: string): void {
+  constructor(private movieService: MovieService, private route: Router) { }
     
-    this.searchTerms.next(term);
-    //console.log(this.movies$);
-  }
-  
  ngOnInit(): void {
     
-    this.searchTerms.pipe(
-      // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
-
-      // ignore new term if same as previous term
-      distinctUntilChanged(),
-
-      // switch to new search observable each time the term changes      
-      // switchMap((term: string) => this.movieService.searchMovies(term))            
-    ).subscribe( (text : string) =>{
-      this.textChanged.emit(text);
-    }
-    );
+  this.searchField =new FormControl(); 
+  
+  this.searchField.valueChanges
+                  .debounceTime(300)    
+                  .distinctUntilChanged()
+                  .subscribe( term => {this.route.navigate(['/movies'], {queryParams: {search_term: term}});}) 
     
-      }
+    }
 }

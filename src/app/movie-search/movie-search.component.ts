@@ -20,15 +20,16 @@ export class MovieSearchComponent implements OnInit {
   searchField: FormControl; 
 
   constructor(private movieService: MovieService, private route: Router) { }
-    
+
  ngOnInit(): void {
-    
-  this.searchField =new FormControl(); 
-  
+
+  this.searchField = new FormControl();
+
   this.searchField.valueChanges
-                  .debounceTime(300)    
+                  .debounceTime(300)
                   .distinctUntilChanged()
-                  .subscribe( term => {this.route.navigate(['/movies'], {queryParams: {search_term: term}});}) 
-    
+                  .subscribe( term => {this.route.navigate(['/movies'], {queryParams: {search_term: term}});
+                });
+
     }
 }

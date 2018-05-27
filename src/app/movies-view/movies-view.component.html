@@ -3,11 +3,11 @@
        <li *ngFor="let movie of mo; let i=index" fxFlex="15%" fxLayoutGap class='movie_element'>
           
                <a routerLink="/detail/{{movie.id}}">
-                <img fxFlex='100%' *ngIf="movie.poster_path != null && movie.backdrop_path != null" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"              
+                <img fxFlex='100%' *ngIf="movie.poster_path !== null" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}"              
                                    srcset="https://image.tmdb.org/t/p/w500/{{movie.poster_path}} 1000w, https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}} 400w" 
                                    sizes='(max-width: 500px)'                                                       
                                        >        
-                 <img class='default' *ngIf="movie.poster_path === null || movie.backdrop_path=== null" src='../../assets/images/default.png'> 
+                 <img class='default' *ngIf="movie.poster_path === null" src='../../assets/images/default.png'> 
 
               <div id='movie_name' fxLayoutAlign="space-evenly center">{{movie.title}}</div> 
               </a>

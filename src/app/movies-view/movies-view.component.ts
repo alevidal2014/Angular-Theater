@@ -15,8 +15,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MoviesViewComponent implements OnInit {
 
-  //Name of the subcomponent to router 
-  @Input() mo: Movie[];
+  @Input() mo: Movie[]; 
   
   constructor(private movieService: MovieService){
   }
@@ -26,12 +25,12 @@ export class MoviesViewComponent implements OnInit {
         
   }   
   
-  loadImage(index: number):void {
+  loadImage(index: number): void {
     console.log(this.mo[index].poster_path);
-    if(this.mo[index].poster_path===null){
+    if(this.mo[index].poster_path === null){
       this.mo[index].poster_path = '../../assets/images/default.png'
     }
-    if(this.mo[index].poster_path===null){
+    if(this.mo[index].poster_path === null){
       this.mo[index].backdrop_path = '../../assets/images/default.png'
     }
     

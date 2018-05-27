@@ -3,7 +3,7 @@
      <li *ngFor="let movie of mo" class='movie_element'>
         <div id='img_cont'>
             <a routerLink="/detail/{{movie.id}}" fxLayoutAlign="start center">
-              <img *ngIf="movie.backdrop_path != null" src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}"> 
+              <img *ngIf="movie.backdrop_path !== null" src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}"> 
               <img class='default' *ngIf="movie.backdrop_path === null" src='../../assets/images/default.png'>                               
               <div id='movie_name'>{{movie.title}}</div> 
             </a>

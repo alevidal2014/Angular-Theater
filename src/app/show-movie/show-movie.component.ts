@@ -11,16 +11,12 @@ export class ShowMovieComponent implements OnInit {
 
   constructor(private location: Location) { }
 
-  ngOnInit() {
-  }
-
   @Input() myMovie: Movie;
   @Input() myCast: string[];
-  
-  //Back button 
+
+  ngOnInit() {
+  }
   goBack(): void {
     this.location.back();
   }
-
-  
 }

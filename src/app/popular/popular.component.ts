@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-popular',
@@ -35,5 +36,6 @@ export class PopularComponent implements OnInit {
   //it waits for the Observable to emit the array of movies
   getPopulars(): void {    
     this.movieService.getPopulars().subscribe(movies=>this.movies=movies);
+    
   }
 }

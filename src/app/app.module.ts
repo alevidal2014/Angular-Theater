@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -43,7 +43,7 @@ import { ReactiveFormsModule} from '@angular/forms';
     ShowMovieComponent,
     ShowRelatedComponent,
     AuthorDetailComponent,
-    ShowAuthorComponent    
+    ShowAuthorComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +56,10 @@ import { ReactiveFormsModule} from '@angular/forms';
     MatTabsModule,
     FlexLayoutModule,
     MatTooltipModule,
-    ScrollEventModule, 
-    ReactiveFormsModule   
+    ScrollEventModule,
+    ReactiveFormsModule
   ],
-  providers: [MovieService],  //Add the new service to the list of providers 
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
